@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<block>
+  <name>mqtt</name>
+  <key>mqtt_mqtt</key>
+  <category>[mqtt]</category>
+  <import>import mqtt</import>
+  <make>mqtt.mqtt($hostname, $port, $channel)</make>
+  <param>
+    <name>Hostname</name>
+    <key>hostname</key>
+    <value>127.0.0.1</value>
+    <type>string</type>
+  </param>
+  <param>
+    <name>Port</name>
+    <key>port</key>
+    <value>1883</value>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Channel</name>
+    <key>channel</key>
+    <value>/gnuradio</value>
+    <type>string</type>
+  </param>
+  <sink>
+    <name>in</name>
+    <type>message</type>
+  </sink>
+</block>
