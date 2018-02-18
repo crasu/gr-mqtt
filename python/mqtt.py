@@ -19,10 +19,12 @@
 # Boston, MA 02110-1301, USA.
 # 
 
-import numpy
-from gnuradio import gr
 import pmt
 import paho.mqtt.client as pmqtt
+import numpy
+import json
+from datetime import datetime
+from gnuradio import gr
 
 class mqtt(gr.sync_block):
     """
@@ -44,5 +46,8 @@ class mqtt(gr.sync_block):
 
     def handle_msg(self, msg):
         msg = pmt.to_python(msg)[1]
-        msg_str = ''.join(chr(c) for c in msg)
+        msg_str = json.dumps({ 
+            "payload" : ''.join(chr(c) for c in msg), 
+            "time": datetime.strftime(datetime.utcnow(), "%y-%m-%dT%H:%M:%SZ")
+        })
         self.client.publish(self.channel, msg_str)
