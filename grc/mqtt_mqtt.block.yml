@@ -1,0 +1,28 @@
+id: mqtt_mqtt
+label: mqtt
+category: '[mqtt]'
+
+templates:
+  imports: import mqtt
+  make: mqtt.mqtt(${hostname}, ${port}, ${channel}
+
+parameters:
+- id: hostname
+  label: Hostname
+  dtype: string
+  default: 127.0.0.1
+- id: port
+  label: Port
+  dtype: int
+  default: 1883
+- id: channel
+  label: Channel
+  dtype: string
+default: /gnuradio
+
+inputs:
+- label: in
+  dtype: message
+
+file_format: 1
+

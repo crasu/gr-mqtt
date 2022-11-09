@@ -31,5 +31,5 @@ except ImportError:
 	pass
 
 # import any pure python here
-from mqtt import mqtt
+from .mqtt import mqtt
 #

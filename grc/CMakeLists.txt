@@ -18,5 +18,5 @@
 # Boston, MA 02110-1301, USA.
 
 install(FILES
-    mqtt_mqtt.xml DESTINATION share/gnuradio/grc/blocks
+    mqtt_mqtt.block.yml DESTINATION share/gnuradio/grc/blocks
 )
